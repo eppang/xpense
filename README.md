@@ -12,15 +12,7 @@ So far, we have created quick and simple mockups of our app pages.
 * Created static frontend HTML mockup of financial account setup (Emily)
 
 ## Pending
-<<<<<<< HEAD
 * Static frontend HTML mockup of account overview (Emily)
 * Static frontend HTML mockup of transaction input (Ethan)
 * Static frontend HTML mockup of overview (Ethan) 
-=======
-* Static frontend HTML mockup of landing login and registration page (Emily, Ethan)
-* Static frontend HTML mockup of financial account setup (Emily)
-* Static frontend HTML mockup of financial account overview (Emily)
-* Static frontend HTML mockup of transaction input (Ethan)
-* Static frontend HTML mockup of overview (Ethan)
->>>>>>> 0305b4fc3dfdc039247e828c3dcd0e4468489b6e
 * Backend to be made in Node.js
