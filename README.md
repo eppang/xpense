@@ -10,8 +10,9 @@ So far, we have created quick and simple mockups of our app pages.
 * Created ESLint rule file .eslintrc to maintain a coding standard
 
 ## Pending
-* Static frontend HTML mockup of landing page (Ethan)
-* Static frontend HTML mockup of login page (Emily)
-* Static frontend HTML mockup of registration page (Ethan)
-* Static frontend HTML mockup of transaction overview (Emily)
+* Static frontend HTML mockup of landing login and registration page (Emily, Ethan)
+* Static frontend HTML mockup of financial account setup (Emily)
+* Static frontend HTML mockup of financial account overview (Emily)
+* Static frontend HTML mockup of transaction input (Ethan)
+* Static frontend HTML mockup of overview (Ethan)
 * Backend to be made in Node.js
