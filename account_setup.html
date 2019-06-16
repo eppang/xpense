@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <!--Import Google Icon Font-->
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <!--Import materialize.css-->
+            <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+            <link type="text/css" rel="stylesheet" href="style.css"/>
+
+            <!--Let browser know website is optimized for mobile-->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        </head>
+      
+        <body>
+			<div style="margin: 20px;"></div>
+            <div class="form">
+            <h3 style="text-align: center; margin-top: 0px;">Let's get started!</h3>
+            <p style="padding-left: 20px; padding-right: 20px; text-align: center;">Xpense tracks your budget based on your initial input of any pre-existing sum of money you may own, and is not associated with any existing bank accounts you may have. You do not have to put in any credit/debit card information.</p>
+			<hr>
+				<div style="margin-top: 20px; margin-left: 300px;">
+					<p>Enter the name of the account or savings you are tracking.</p>
+					<div class="row">
+						<form class="col s12">
+							<div class="row">
+								<div class="input-field col s6">
+								<i class="material-icons prefix">account_balance</i>
+								<input id="icon_prefix" type="text" class="validate">
+								<label for="icon_prefix">Account Name</label>
+								</div>
+							</div>
+						</form>
+					</div>
+					<p>Enter the amount of money associated with this account.</p>
+					<div class="row">
+						<form class="col s12">
+							<div class="row">
+								<div class="input-field col s6">
+								<i class="material-icons prefix">attach_money</i>
+								<input id="icon_prefix" type="text" class="validate">
+								<label for="icon_prefix">00.00</label>
+								</div>
+							</div>
+						</form>
+					</div>
+					<a class="waves-effect waves-light red lighten-1 btn">Add another account</a>
+					<a class="waves-effect waves-light red lighten-1 btn" style="margin-left: 20px;">Finish</a>
+				</div>
+			</div>
+                  <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+      </body>

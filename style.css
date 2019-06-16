@@ -1,5 +1,9 @@
 body {
-    background-color: #f44336;
+    background-color: #ef5350;
+}
+
+p {
+	font-size: 14px;
 }
 
 #logo {
@@ -23,4 +27,15 @@ body {
     padding-bottom: 25px;
     background: white;
     color: #ef5350;
+}
+
+.form {
+    border-radius: 5px;
+    background: white;
+    color: #ef5350;
+    padding: 20px; 
+    width: 70%;
+    height: 600px;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
