@@ -1,43 +1,97 @@
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="style.css"/>
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection">
+		<link type="text/css" rel="stylesheet" href="style.css">
+		<style>
+			.login {
+				background: #FFF;
+			}
+		</style>
 
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
 
-    <body>
-        <h1 id="logo" class="white-text"><b><i>x</i>pense</b></h1>
-        
-        <div class="box-login">
-            <div style="margin: 50px;">
-            <h4>Log In</h4>
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s6">
-                              <input id="last_name" type="text" class="validate">
-                              <label for="last_name">Username</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                              <input id="password" type="password" class="validate">
-                              <label for="password">Password</label>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <a class="waves-effect waves-light red lighten-1 btn">Log In</a>
-            </div>
-        
-        <div class="footer">xpense</div>
-      <!--JavaScript at end of body for optimized loading-->
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-    </body>
-  </html>
+	<body style="background-color: #ef5350;">
+		<main style="flex: 1; display: flex; flex-direction: row;">
+			<div class="row" style="flex: 1; display: flex; margin-bottom: 0;">
+				<div class="red lighten-1 white-text col s12 m6 l8 xl9">
+					<h1 id="logo"><span style="font-weight: bold;"><span style="font-style: italic;">x</span>pense</span></h1>
+					<h2 style="font-style: italic;">Finance management made easy</h2>
+				</div>
+				<div class="col s12 m6 l4 xl3 login">
+					<div class="row">
+						<div class="col s10 push-s1">
+							<div class="row" style="margin-top: 10px; text-align: right;">
+								<a class="waves-effect waves-light red lighten-1 btn" href="register.html">Sign Up</a>
+							</div>
+							<div class="row">
+								<h4 class="col">Log In</h4>
+							</div>
+							<div class="row">
+								<div class="col">Log in with your account</div>
+							</div>
+							<div class="row">
+								<form class="col s12">
+									<div class="row">
+										<div class="input-field col s12">
+											<input id="last_name" type="text" class="validate">
+											<label for="last_name">Username</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="input-field col s12">
+											<input id="password" type="password" class="validate">
+											<label for="password">Password</label>
+										</div>
+									</div>
+									<div class="row">
+										<a class="waves-effect waves-light red lighten-1 btn col s12">login</a>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="page-footer">
+			<div class="container">
+				<div class="white-text row">
+					<div class="col s4 l3">
+						<ul>
+							<li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col s4 l3">
+						<ul>
+							<li><a class="grey-text text-lighten-3" href="#!">Terms of Service</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
+						</ul>
+					</div>
+					<div class="col s4 l3">
+						<ul>
+							<li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer-copyright">
+				<div class="container">
+				© 2019 Copyright E²
+				<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+				</div>
+			</div>
+		</footer>
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	</body>
+</html>
