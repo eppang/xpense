@@ -1,7 +1,15 @@
+html {
+	--theme-accent: #EF5350;
+	--theme-accent: #7E57C2;
+	--theme-accent-light: #8C69C9;
+	--theme-accent-dark: #643DA9;
+}
+
 body {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
+	background: #F7F7F7;
 }
 
 main {
@@ -10,4 +18,46 @@ main {
 
 p {
 	font-size: 14px;
+}
+
+.box {
+	margin: 1rem auto;
+	border-radius: 5px;
+	background: white;
+	padding: 1.35rem;
+/*	border: 1px solid #DADCE0;*/
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+/*	box-shadow: 0 2px 6px 0 rgba(60, 64, 67, .15);*/
+}
+
+/* Materialize Overrides */
+
+/* Button color */
+.btn, .btn-large, .btn-small {
+	background-color: var(--theme-accent);
+}
+/* Button hover color */
+.btn:hover, .btn-large:hover, .btn-small:hover {
+	background-color: var(--theme-accent-light);
+}
+/* Button focus color */
+.btn:focus, .btn-large:focus, .btn-small:focus, .btn-floating:focus {
+	background-color: var(--theme-accent-dark);
+}
+
+/* Label focus color */
+input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+input[type=password]:not(.browser-default):focus:not([readonly]) + label {
+	color: var(--theme-accent);
+}
+/* Label underline focus color */
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+	border-bottom: 1px solid var(--theme-accent);
+	box-shadow: 0 1px 0 0 var(--theme-accent);
+}
+
+/* Dropdown item color */
+.dropdown-content li > a, .dropdown-content li > span {
+	color: var(--theme-accent);
 }

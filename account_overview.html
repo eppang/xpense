@@ -9,19 +9,14 @@
 		<link type="text/css" rel="stylesheet" href="style.css">
 
 		<style>
-			.form {
-				border-radius: 5px;
-				background: white;
-/*				color: #ef5350;*/
-				padding: 20px;
-				width: 70%;
-				height: 663.4px;
-				margin: auto;
-				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			.transaction {
+				margin-bottom: 0;
 			}
+			
 			.numbers {
-  				font-family: "Roboto Mono", Arial;
+				font-family: "Roboto Mono", Arial;
 			}
+
 			.sticky {
 				position: -webkit-sticky;
 				position: sticky;
@@ -34,84 +29,218 @@
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
-	
 	<body>
-		<div class="form">
-			<div class="sticky">
-				<div class="row">
-					<div class="col s4">					
-						<h4 class="red-text text-lighten-1">Savings Account</h4>
+		<header>
+			<nav>
+				<div class="nav-wrapper" style="padding: 0 .75rem;">
+					<a href="#" class="brand-logo"><span style="font-weight: bold;"><span style="font-style: italic;">x</span>pense</span></a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="box container">
+				<div class="sticky" style="margin: 0 -20px; background: linear-gradient(0deg, rgba(0,0,0,0.0) 0%, rgba(255,255,255,0.8) 30%, rgba(255,255,255,1) 100%);">
+					<div class="row">
+						<div class="col s4">
+							<h4 class="red-text text-lighten-1" style="margin-top: 0;">Savings Account</h4>
+						</div>
+						<div class="col s8" style="text-align: right;">
+							<a class="dropdown-trigger btn" href="#" data-target="dropdown1"><i class="material-icons">add</i></a>
+							<ul id="dropdown1" class='dropdown-content'>
+								<li><a class="modal-trigger" href="#deposit-modal">Add Deposit</a></li>
+								<li><a class="modal-trigger" href="#withdraw-modal">Add Withdrawl</a></li>
+							</ul>
+						</div>
 					</div>
-					<div class="col s8">
-						<a class="dropdown-trigger btn-large" href="#" data-target="dropdown1" style="margin-left: 500px"><i class="material-icons">list</i></a>
-						  <!-- Dropdown Structure (not functional for some reason)-->
-						<ul id="dropdown1" class='dropdown-content'>
-							<li><a href="#!">one</a></li>
-							<li><a href="#!">two</a></li>
-							<li><a href="#!">three</a></li>
+					<h2 class="numbers" style="margin-top: 0.5rem; padding-left: .75rem;">$1,908.00</h2>
+				</div>
+				<!--Each of these is a transaction thingy-->
+				<div class="divider"></div>
+<!--				<div class="section">-->
+					<div class="row transaction">
+						<div class="col s1">
+							<h5 class="red-text text-lighten-1">Rent</h5>
+							<p>6/9/19</p>
+						</div>
+						<div class="col s1 offset-s9">
+							<h5 class="numbers" style="margin-top: 40px">$560.00</h5>
+						</div>
+					</div>
+<!--				</div>-->
+				<!--Each of these is a transaction thingy-->
+				<div class="divider"></div>
+<!--				<div class="section">-->
+					<div class="row transaction">
+						<div class="col s1">
+							<h5 class="red-text text-lighten-1">Rent</h5>
+							<p>6/9/19</p>
+						</div>
+						<div class="col s1 offset-s9">
+							<h5 class="numbers" style="margin-top: 40px">$560.00</h5>
+						</div>
+					</div>
+<!--				</div>-->
+				<div class="divider"></div>
+<!--				<div class="section">-->
+					<div class="row transaction">
+						<div class="col s1">
+							<h5 class="red-text text-lighten-1">Rent</h5>
+							<p>6/9/19</p>
+						</div>
+						<div class="col s1 offset-s9">
+							<h5 class="numbers" style="margin-top: 40px">$560.00</h5>
+						</div>
+					</div>
+<!--				</div>-->
+				<div class="divider"></div>
+<!--				<div class="section">-->
+					<div class="row transaction">
+						<div class="col s1">
+							<h5 class="red-text text-lighten-1">Rent</h5>
+							<p>6/9/19</p>
+						</div>
+						<div class="col s1 offset-s9">
+							<h5 class="numbers" style="margin-top: 40px">$560.00</h5>
+						</div>
+					</div>
+<!--				</div>-->
+				<div class="divider"></div>
+<!--				<div class="section">-->
+					<div class="row transaction">
+						<div class="col s1">
+							<h5 class="red-text text-lighten-1">Rent</h5>
+							<p>6/9/19</p>
+						</div>
+						<div class="col s1 offset-s9">
+							<h5 class="numbers" style="margin-top: 40px">$560.00</h5>
+						</div>
+					</div>
+<!--				</div>-->
+				<div class="divider"></div>
+<!--				<div class="section">-->
+					<div class="row transaction">
+						<div class="col s1">
+							<h5 class="red-text text-lighten-1">Rent</h5>
+							<p>6/9/19</p>
+						</div>
+						<div class="col s1 offset-s9">
+							<h5 class="numbers" style="margin-top: 40px">$560.00</h5>
+						</div>
+					</div>
+<!--				</div>-->
+				<div class="divider"></div>
+<!--				<div class="section">-->
+					<div class="row transaction">
+						<div class="col s1">
+							<h5 class="red-text text-lighten-1">Rent</h5>
+							<p>6/9/19</p>
+						</div>
+						<div class="col s1 offset-s9">
+							<h5 class="numbers" style="margin-top: 40px">$560.00</h5>
+						</div>
+<!--					</div>-->
+				</div>
+				<div class="divider"></div>
+<!--				<div class="section">-->
+					<div class="row transaction">
+						<div class="col s1">
+							<h5 class="red-text text-lighten-1">Rent</h5>
+							<p>6/9/19</p>
+						</div>
+						<div class="col s1 offset-s9">
+							<h5 class="numbers" style="margin-top: 40px">$560.00</h5>
+						</div>
+					</div>
+<!--				</div>-->
+				<div class="divider"></div>
+<!--				<div class="section">-->
+					<div class="row transaction">
+						<div class="col s1">
+							<h5 class="red-text text-lighten-1">Rent</h5>
+							<p>6/9/19</p>
+						</div>
+						<div class="col s1 offset-s9">
+							<h5 class="numbers" style="margin-top: 40px">$560.00</h5>
+						</div>
+					</div>
+<!--				</div>-->
+			</div>
+			<div id="deposit-modal" class="modal">
+				<div class="modal-content">
+					<h4>Deposit Transaction</h4>
+					<form class="col s12">
+						<div class="row">
+							<div class="input-field col s12">
+								<input id="deposit-amount" type="number" class="validate">
+								<label for="deposit-amount">Amount</label>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+					<a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+				</div>
+			</div>
+			<div id="withdraw-modal" class="modal">
+				<div class="modal-content">
+					<h4>Withdraw Transaction</h4>
+					<form class="col s12">
+						<div class="row">
+							<div class="input-field col s12">
+								<input id="deposit-amount" type="number" class="validate">
+								<label for="deposit-amount">Amount</label>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+					<a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+				</div>
+			</div>
+		</main>
+		<footer class="page-footer">
+			<div class="container">
+				<div class="white-text row">
+					<div class="col s4 l3">
+						<ul>
+							<li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col s4 l3">
+						<ul>
+							<li><a class="grey-text text-lighten-3" href="#!">Terms of Service</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
+						</ul>
+					</div>
+					<div class="col s4 l3">
+						<ul>
+							<li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
 						</ul>
 					</div>
 				</div>
-				<h2 class="numbers">$1,908.00</h2>
 			</div>
-			<!--Each of these is a transaction thingy-->
-			<div class="divider"></div>
-				<div class="section">
-					<div class="row">
-						<div class="col s1">
-							<h5 class="red-text text-lighten-1">Rent</h5>
-							<p>6/9/19</p>
-						</div>
-						<div class="col s1 offset-s9">
-							<h5 class="numbers" style="margin-top: 40px">$560.00</h5>
-						</div>
-					</div>
+			<div class="footer-copyright">
+				<div class="container">
+				© 2019 Copyright E²
+				<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
 				</div>
-			<!--Each of these is a transaction thingy-->
-			<div class="divider"></div>
-				<div class="section">
-					<div class="row">
-						<div class="col s1">
-							<h5 class="red-text text-lighten-1">Rent</h5>
-							<p>6/9/19</p>
-						</div>
-						<div class="col s1 offset-s9">
-							<h5 class="numbers" style="margin-top: 40px">$560.00</h5>
-						</div>
-					</div>
-				</div>
-			<div class="divider"></div>
-				<div class="section">
-					<div class="row">
-						<div class="col s1">
-							<h5 class="red-text text-lighten-1">Rent</h5>
-							<p>6/9/19</p>
-						</div>
-						<div class="col s1 offset-s9">
-							<h5 class="numbers" style="margin-top: 40px">$560.00</h5>
-						</div>
-					</div>
-				</div>
-			<div class="divider"></div>
-				<div class="section">
-					<div class="row">
-						<div class="col s1">
-							<h5 class="red-text text-lighten-1">Rent</h5>
-							<p>6/9/19</p>
-						</div>
-						<div class="col s1 offset-s9">
-							<h5 class="numbers" style="margin-top: 40px">$560.00</h5>
-						</div>
-					</div>
-				</div>
-		</div>
-		
+			</div>
+		</footer>
 		<!--JavaScript at end of body for optimized loading-->
-		<script type="text/javascript" src="materialize/js/materialize.min.js">
+		<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+		<script>
 			document.addEventListener('DOMContentLoaded', function() {
-			var elems = document.querySelectorAll('.dropdown-trigger');
-			var instances = M.Dropdown.init(elems, options);
-		  });
+				let dropdowns = document.querySelectorAll('.dropdown-trigger');
+				let dropdownInstances = M.Dropdown.init(dropdowns, {alignment: "right", constrainWidth: false});
+				let modals = document.querySelectorAll('.modal');
+				let modalInstances = M.Modal.init(modals);
+			});
 		</script>
-
 	</body>
+</html>
