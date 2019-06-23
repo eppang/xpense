@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint --ignore-pattern \"**/materialize/**\" . --ext .js || true",
     "start": "node server.js"
   },
   "author": "",
@@ -16,6 +16,7 @@
     "handlebars": "^4.1.2"
   },
   "devDependencies": {
+    "eslint": "^6.0.0",
     "iroh": "^0.3.0"
   },
   "repository": {
