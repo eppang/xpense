@@ -49,6 +49,10 @@
 			<nav>
 				<div class="nav-wrapper" style="padding: 0 .75rem;">
 					<a href="#" class="brand-logo"><span style="font-weight: bold;"><span style="font-style: italic;">x</span>pense</span></a>
+					<a class="dropdown-trigger btn-flat" href="#" data-target="logout" style="float: right;"><i class="material-icons" style="color: white;">account_circle</i></a>
+					<ul id="logout" class='dropdown-content'>
+						<li><a class="modal-trigger" href="#">Log out</a></li>
+					</ul>
 				</div>
 			</nav>
 		</header>
@@ -130,5 +134,13 @@
 		</footer>
 		<!--JavaScript at end of body for optimized loading-->
 		<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				let dropdowns = document.querySelectorAll('.dropdown-trigger');
+				let dropdownInstances = M.Dropdown.init(dropdowns, {alignment: "left", constrainWidth: false, coverTrigger: false});
+				let modals = document.querySelectorAll('.modal');
+				let modalInstances = M.Modal.init(modals);
+			});
+		</script>
 	</body>
 </html>
