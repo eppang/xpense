@@ -6,6 +6,7 @@
 		<link href="https://fonts.googleapis.com/icon?family=Roboto Mono" rel="stylesheet">
 		<!--Import materialize.css-->
 		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<link type="text/css" rel="stylesheet" href="style/global.css">
 
 		<style>
@@ -52,7 +53,7 @@
 							</ul>
 						</div>
 					</div>
-					<h2 class="numbers" style="margin-top: 0.5rem; padding-left: .75rem;">$1,908.00</h2>
+					<h2 class="numbers" id="total" style="margin-top: 0.5rem; padding-left: .75rem;">$1908.00</h2>
 				</div>
 				<!--Each of these is a transaction thingy-->
 				<div class="divider"></div>
@@ -188,8 +189,8 @@
 					<form class="col s12">
 						<div class="row">
 							<div class="input-field col s12">
-								<input id="deposit-amount" type="number" class="validate">
-								<label for="deposit-amount">Amount</label>
+								<input id="withdraw-amount" type="number" class="validate">
+								<label for="withdraw-amount">Amount</label>
 							</div>
 						</div>
 					</form>
@@ -241,6 +242,39 @@
 				let modals = document.querySelectorAll('.modal');
 				let modalInstances = M.Modal.init(modals);
 			});
+			
+//			let accountBalance = document.getElementById("output").value, 1908;
+//			function addBalance() {
+//    			let addedValue = parseInt(document.getElementById("addVal").value, 10);
+//    			accountBalance += addValue;
+//			}
+//			function subBalance() {
+//				let subValue = parseInt(document.getElementById("subVal").value, 10);
+//				accountBalance -+ subValue;
+//			}
+			
+			$('input').keyup(function(){ // run anytime the value changes
+    			let addValue = Number($('#deposit-amount').val());   // get value of field
+				let subValue = Number($('#withdraw-amount').val());
+				let totalValue = Number($('#total').text().replace("$", "")); // Takes away dollar sign; needs to put it back somehow later
+				let convertedTotal = parseFloat(totalValue);
+				let convertedAdd = parseFloat(addValue);
+				let convertedSub = parseFloat(subValue);
+				let finalTotal = 0;
+				if (addValue != "") {
+					finalTotal = parseFloat(convertedAdd + convertedTotal).toFixed(2);
+					// Invoke document.getElementById("deposit-amount").value = ""; when user clicks 'ok'
+				} else if (subValue != "") {
+					finalTotal = parseFloat(convertedTotal - convertedSub).toFixed(2);
+					// Invoke document.getElementById("deposit-amount").value = ""; when user clicks 'ok'
+				}
+
+				$('#total').html(finalTotal);
+			});
+			
+			
+			
+
 		</script>
 	</body>
 </html>
