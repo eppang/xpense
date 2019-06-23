@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cookie-parser": "^1.4.4",
+    "@okta/oidc-middleware": "^2.0.0",
+    "@okta/okta-sdk-nodejs": "^2.0.0",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "handlebars": "^4.1.2"

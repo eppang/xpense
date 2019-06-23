@@ -1,7 +1,12 @@
 <html>
 	<head>
 		<title>{{{errorCode}}} {{{errorName}}}</title>
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Roboto+Mono" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Roboto+Condensed" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css" media="screen,projection">
+		<link type="text/css" rel="stylesheet" href="/style/global.css">
 		<style type="text/css">
 			html {
 				font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -20,14 +25,14 @@
 			
 			a {
 				color: #42A5F5;
-/*				color: #EF5350;*/
+				color: #EF5350;
 				text-decoration: none;
 			}
 			
 			.error-box {
 				padding: 10px 0 20px;
 				background: #E3F2FD;
-/*				background: #FFEBEE;*/
+				background: #FFEBEE;
 				text-align: center;
 			}
 			
@@ -42,23 +47,68 @@
 				margin: 20px;
 				font-size: 72px;
 				color: #2196F3;
-/*				color: #F44336;*/
+				color: #F44336;
 			}
 			
 			.error-detail {
 				margin-bottom: 30px;
 				font-size: 16px;
 				color: #64B5F6;
-/*				color: #E57373;*/
+				color: #E57373;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="error-box">
-			<div class="error-header">{{{errorMessage}}}</div>
-			<div class="error-detail">{{{errorCode}}} {{{errorName}}}</div>
-		</div>
-		<div style="margin-top: 40px;">{{{errorInformation}}}</div>
-		<div style="margin-top: 25px;">{{{errorHelpText}}}</div>
+		<header>
+			<nav>
+				<div class="nav-wrapper" style="padding: 0 .75rem;">
+					<a href="#" class="brand-logo"><span style="font-weight: bold;"><span style="font-style: italic;">x</span>pense</span></a>
+					<a class="dropdown-trigger btn-flat" href="#" data-target="logout" style="float: right;"><i class="material-icons" style="color: white;">account_circle</i></a>
+					<ul id="logout" class='dropdown-content'>
+						<li><a class="modal-trigger" href="#">Log out</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="error-box">
+				<div class="error-header">{{{errorMessage}}}</div>
+				<div class="error-detail">{{{errorCode}}} {{{errorName}}}</div>
+			</div>
+			<div style="margin-top: 40px;">{{{errorInformation}}}</div>
+			<div style="margin-top: 25px;">{{{errorHelpText}}}</div>
+		</main>
+		<footer class="page-footer">
+			<div class="container">
+				<div class="white-text row">
+					<div class="col s4 l3">
+						<ul>
+							<li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col s4 l3">
+						<ul>
+							<li><a class="grey-text text-lighten-3" href="#!">Terms of Service</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
+						</ul>
+					</div>
+					<div class="col s4 l3">
+						<ul>
+							<li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer-copyright">
+				<div class="container">
+				© 2019 E²
+				<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>

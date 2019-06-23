@@ -3,28 +3,81 @@
 
 console.log("\r--------------------------XPENSE SERVER--------------------------");
 
+const ALLOWED_METHODS = ["GET", "POST"];
+const listenPort = process.env.PORT || 8080; // 3000;
+const listenAddress = "0.0.0.0";
+
 const Directory = {};
 Directory.SELF = __dirname + "/";
 Directory.INCLUDE = Directory.SELF + "include/";
 Directory.STATIC = Directory.SELF + "static/";
 Directory.TEMPLATE = Directory.SELF + "template/";
-const ALLOWED_METHODS = ["GET", "POST"];
 
+const createError = require("http-errors");
 const application = require("express")();
+const path = require("path");
+const session = require("express-session");
 const http = require("http");
 const https = require("https");
-const cookieParser = require("cookie-parser"); 
 const server = http.createServer(application);
 const fs = require("fs");
 const handlebars = require("handlebars");
+const okta = require("@okta/okta-sdk-nodejs");
+const ExpressOIDC = require("@okta/oidc-middleware").ExpressOIDC;
 const utility = require(Directory.INCLUDE + "utility.js");
 const ServerError = require(Directory.INCLUDE + "ServerError.js");
 
-const listenPort = process.env.PORT || 8080; // 3000;
-const listenAddress = "0.0.0.0";
+const oktaClient = new okta.Client({
+	orgUrl: "https://dev-974226.okta.com",
+	token: "00YXJuvTYTYAifvwlaMfysCIrEZQYjH9kG-Nlrmc32"
+});
+const oidc = new ExpressOIDC({
+	appBaseUrl: "http://localhost:8080",
+	issuer: "https://dev-974226.okta.com/oauth2/default",
+	client_id: "0oarivk6lazBpLc21356",
+	client_secret: "e21MQb6TfxwiV3GZyX7Cxn-DrpfvI0y1ih6E0hmz",
+	scope: "openid profile",
+	routes: {
+		login: {
+			path: "/authenticate/login"
+		},
+		loginCallback: {
+			path: "/authenticate/callback",
+			afterCallback: "/overview"
+		}
+	}
+});
 
-// Use cookie-parser
-app.use(cookieParser);
+application.use(session({
+	secret: `PJSM>?L:3I8JKbgVg<'6Weyvx3Sj6sO>")Nb;7&Eu.Ol<j(4cqAmzmM0p5^Pk&#iMFUq^ElvK%f?R#~44CUlkr!.P'2:K>hNrB/lx^~ILU~.6?@.?+bXD$)BA:lDr1@_`,
+	resave: true,
+	saveUninitialized: false
+}));
+application.use(oidc.router);
+application.use((request, response, next) => {
+	if (!request.userContext) {
+		return next();
+	}
+	
+	oktaClient.getUser(request.userContext.userinfo.sub).then(user => {
+		request.user = user;
+		next();
+	}).catch(err => {
+		next(err);
+	});
+});
+
+function loginRequired(request, response, next) {
+	if (!request.user) {
+		let error = new Error("401 Unauthorized");
+		error.status = 401;
+		next(error);
+		
+		return;
+	}
+	
+	next();
+}
 
 // Add headers
 application.use((request, response, next) => {
@@ -35,15 +88,10 @@ application.use((request, response, next) => {
 	next();
 });
 
+application.use("/authenticate", require("./routes/authenticate.js"));
+application.use("/overview", loginRequired);
+
 application.get("/", (request, response) => {
-	response.sendFile(Directory.STATIC + "index.html");
-});
-
-application.post("/authenticate/login", (request, response) => {
-	response.sendFile(Directory.STATIC + "index.html");
-});
-
-application.get("/authenticate/logout", (request, response) => {
 	response.sendFile(Directory.STATIC + "index.html");
 });
 

@@ -3,11 +3,11 @@
 	<head>
 		<!--Import Google Icon Font-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/icon?family=Roboto Mono" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto Mono" rel="stylesheet">
 		<!--Import materialize.css-->
-		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection">
+		<link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css" media="screen,projection">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<link type="text/css" rel="stylesheet" href="style/global.css">
+		<link type="text/css" rel="stylesheet" href="/style/global.css">
 
 		<style>
 			.transaction {
@@ -232,7 +232,7 @@
 			</div>
 			<div class="footer-copyright">
 				<div class="container">
-				© 2019 Copyright E²
+				© 2019 E²
 				<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
 				</div>
 			</div>
@@ -257,6 +257,7 @@
 //				accountBalance -+ subValue;
 //			}
 			
+			// TODO: Fix event
 			$('input').keyup(function(){ // run anytime the value changes
     			let addValue = Number($('#deposit-amount').val());   // get value of field
 				let subValue = Number($('#withdraw-amount').val());
@@ -273,7 +274,7 @@
 					// Invoke document.getElementById("deposit-amount").value = ""; when user clicks 'ok'
 				}
 
-				$('#total').html(finalTotal);
+				$('#total').html("$" + finalTotal);
 			});
 			
 			
