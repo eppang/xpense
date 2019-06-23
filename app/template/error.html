@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>{{{errorCode}}} {{{errorName}}}</title>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<style type="text/css">
+			html {
+				font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+				text-align: center;
+			}
+			
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				color: #444;
+			}
+			
+			a {
+				color: #42A5F5;
+/*				color: #EF5350;*/
+				text-decoration: none;
+			}
+			
+			.error-box {
+				padding: 10px 0 20px;
+				background: #E3F2FD;
+/*				background: #FFEBEE;*/
+				text-align: center;
+			}
+			
+			.code {
+				padding: 2px 5px;
+				background: #EEE;
+				font-family: monospace;
+				border-radius: 2px;
+			}
+			
+			.error-header {
+				margin: 20px;
+				font-size: 72px;
+				color: #2196F3;
+/*				color: #F44336;*/
+			}
+			
+			.error-detail {
+				margin-bottom: 30px;
+				font-size: 16px;
+				color: #64B5F6;
+/*				color: #E57373;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="error-box">
+			<div class="error-header">{{{errorMessage}}}</div>
+			<div class="error-detail">{{{errorCode}}} {{{errorName}}}</div>
+		</div>
+		<div style="margin-top: 40px;">{{{errorInformation}}}</div>
+		<div style="margin-top: 25px;">{{{errorHelpText}}}</div>
+	</body>
+</html>

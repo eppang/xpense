@@ -5,11 +5,9 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--Import materialize.css-->
 		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection">
-		<link type="text/css" rel="stylesheet" href="style.css">
+		<link type="text/css" rel="stylesheet" href="style/global.css">
+
 		<style>
-			.login {
-				background: #FFF;
-			}
 		</style>
 
 		<!--Let browser know website is optimized for mobile-->
@@ -17,53 +15,45 @@
 	</head>
 
 	<body>
-		<main style="flex: 1; display: flex; flex-direction: row;">
-			<div class="row" style="flex: 1; display: flex; margin-bottom: 0;">
-				<div class="red lighten-1 white-text col s12 m6 l8 xl9">
-					<div style="margin: 0 50px;">
-						<h1 id="logo"><span style="font-weight: bold;"><span style="font-style: italic;">x</span>pense</span></h1>
-						<h2 style="font-style: italic;">Finance management made easy</h2>
-					</div>
+		<header>
+			<nav>
+				<div class="nav-wrapper" style="padding: 0 .75rem;">
+					<a href="#" class="brand-logo"><span style="font-weight: bold;"><span style="font-style: italic;">x</span>pense</span></a>
 				</div>
-				<div class="col s12 m6 l4 xl3 login">
+			</nav>
+		</header>
+		<main>
+			<div class="box container" style="margin: 20px auto;">
+				<h3 style="text-align: center; margin-top: 0px;">Let's get started!</h3>
+				<p style="padding-left: 20px; padding-right: 20px; text-align: center;">Xpense tracks your budget based on your initial input of any pre-existing sum of money you may own, and is not associated with any existing bank accounts you may have. You do not have to put in any credit/debit card information.</p>
+				<hr>
+				<div style="margin-top: 20px; margin-left: 300px;">
+					<p>Enter the name of the account or savings you are tracking.</p>
 					<div class="row">
-						<div class="col s10 push-s1">
-							<div class="row" style="margin-top: 10px; text-align: right;">
-								<a class="waves-effect waves-light btn" href="index.html">Log In</a>
-							</div>
+						<form class="col s12">
 							<div class="row">
-								<h4 class="col">Register</h4>
+								<div class="input-field col s6">
+									<i class="material-icons prefix">account_balance</i>
+									<input id="name" type="text" class="validate">
+									<label for="name">Account Name</label>
+								</div>
 							</div>
-							<div class="row">
-								<div class="col">Register for a new account</div>
-							</div>
-							<div class="row">
-								<form class="col s12">
-									<div class="row">
-										<div class="input-field col s12">
-											<input id="last_name" type="text" class="validate">
-											<label for="last_name">Username</label>
-										</div>
-									</div>
-									<div class="row">
-										<div class="input-field col s12">
-											<input id="password" type="password" class="validate">
-											<label for="password">Password</label>
-										</div>
-									</div>
-									<div class="row">
-										<div class="input-field col s12">
-											<input id="password2" type="password" class="validate">
-											<label for="password2">Re-enter password</label>
-										</div>
-									</div>
-									<div class="row">
-										<a class="waves-effect waves-light btn col s12">sign up</a>
-									</div>
-								</form>
-							</div>
-						</div>
+						</form>
 					</div>
+					<p>Enter the amount of money associated with this account.</p>
+					<div class="row">
+						<form class="col s12">
+							<div class="row">
+								<div class="input-field col s6">
+									<i class="material-icons prefix">attach_money</i>
+									<input id="amount" type="text" class="validate">
+									<label for="amount">00.00</label>
+								</div>
+							</div>
+						</form>
+					</div>
+					<a class="waves-effect waves-light btn">Add another account</a>
+					<a class="waves-effect waves-light btn" style="margin-left: 20px;">Finish</a>
 				</div>
 			</div>
 		</main>

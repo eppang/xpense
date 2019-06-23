@@ -5,7 +5,7 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--Import materialize.css-->
 		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection">
-		<link type="text/css" rel="stylesheet" href="style.css">
+		<link type="text/css" rel="stylesheet" href="style/global.css">
 		<style>
 			.login {
 				background: #FFF;
@@ -29,13 +29,13 @@
 					<div class="row">
 						<div class="col s10 push-s1">
 							<div class="row" style="margin-top: 10px; text-align: right;">
-								<a class="waves-effect waves-light btn" href="register.html">Sign Up</a>
+								<a class="waves-effect waves-light btn" href="index.html">Log In</a>
 							</div>
 							<div class="row">
-								<h4 class="col">Log In</h4>
+								<h4 class="col">Register</h4>
 							</div>
 							<div class="row">
-								<div class="col">Log in with your account</div>
+								<div class="col">Register for a new account</div>
 							</div>
 							<div class="row">
 								<form class="col s12">
@@ -52,7 +52,13 @@
 										</div>
 									</div>
 									<div class="row">
-										<a class="waves-effect waves-light btn col s12">login</a>
+										<div class="input-field col s12">
+											<input id="password2" type="password" class="validate">
+											<label for="password2">Re-enter password</label>
+										</div>
+									</div>
+									<div class="row">
+										<a class="waves-effect waves-light btn col s12">sign up</a>
 									</div>
 								</form>
 							</div>
