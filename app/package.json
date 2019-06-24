@@ -4,6 +4,7 @@
   "main": "server.js",
   "scripts": {
     "lint": "npx eslint --ignore-pattern \"**/materialize/**\" . --ext .js || true",
+    "lint-fix": "npx eslint --ignore-pattern \"**/materialize/**\" --fix . --ext .js || true",
     "start": "node server.js"
   },
   "author": "",
