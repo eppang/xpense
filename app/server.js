@@ -89,6 +89,12 @@ application.use('/authenticate', require('./routes/authenticate.js'));
 application.use('/overview', loginRequired);
 
 application.get('/', (request, response) => {
+	if (request.user) {
+		response.redirect('/overview');
+		
+		return;
+	}
+	
 	response.sendFile(`${Directory.STATIC}index.html`);
 });
 
