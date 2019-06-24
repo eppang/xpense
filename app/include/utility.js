@@ -1,6 +1,6 @@
-let crypto = require("crypto");
-let http = require("http");
-let https = require("https");
+let crypto = require('crypto');
+let http = require('http');
+let https = require('https');
 
 module.exports = {
 	/**
@@ -48,8 +48,8 @@ module.exports = {
 	},
 	
 	randomString: function (size, errorCallback) {
-		try{
-			return crypto.randomBytes(size).toString("base64").replace(/\//g, "_").replace(/\+/g, "-");
+		try {
+			return crypto.randomBytes(size).toString('base64').replace(/\//g, '_').replace(/\+/g, '-');
 		} catch (error) {
 			errorCallback(error);
 		}
@@ -68,32 +68,32 @@ module.exports = {
 			});
 		}
 
-		if (options.protocol == "https:") {
+		if (options.protocol == 'https:') {
 			httpModule = https;
 		}
 		
 		let request = httpModule.request(options, (response) => {
-			let data = "";
-			response.on("data", (chunk) => {
+			let data = '';
+			response.on('data', (chunk) => {
 				data += chunk;
 			});
 
-			response.on("end", () => {
+			response.on('end', () => {
 				callback(data);
 			});
 		});
 
-		request.on("socket", (socket) => {
+		request.on('socket', (socket) => {
 			socket.setTimeout(10000);
-			socket.on("timeout", () => {
+			socket.on('timeout', () => {
 				request.abort();
 				if (errorCallback) {
-					errorCallback(new Error("Request timed out."));
+					errorCallback(new Error('Request timed out.'));
 				}
 			});
 		});
 
-		request.on("error", (error) => {
+		request.on('error', (error) => {
 			if (errorCallback) {
 				errorCallback(error);
 			}
@@ -120,29 +120,29 @@ module.exports = {
 		}
 		number = Math.floor(number * Math.pow(10, places) + 0.5) / Math.pow(10, places);
 		// Add zeros (turns number into string)
-		number += "";
+		number += '';
 		if (places > 0) {
 			// Escape the magic character "." with "%"
 			if (!/\./.test(number)) {
-				number += ".";
+				number += '.';
 			}
-			var decimal = number.indexOf(".") + 1;
-			var decimals = number.substring(decimal).length;
-			for (var i = 0; i < places - decimals; i++) {
-				number += "0";
+			let decimal = number.indexOf('.') + 1;
+			let decimals = number.substring(decimal).length;
+			for (let i = 0; i < places - decimals; i++) {
+				number += '0';
 			}
 		}
 		return number;
 	},
 	
 	parseTime: function (dateString) {
-		dateString = dateString.split(" ");
-		var datePortion = dateString[0];
-		var timePortion = dateString[1];
-		var antePostMeridiem = dateString[2];
-		datePortion = datePortion.split("/");
-		timePortion = timePortion.split(":");
+		dateString = dateString.split(' ');
+		let datePortion = dateString[0];
+		let timePortion = dateString[1];
+		let antePostMeridiem = dateString[2];
+		datePortion = datePortion.split('/');
+		timePortion = timePortion.split(':');
 
-		return new Date(Number(datePortion[2]), Number(datePortion[0]), Number(datePortion[1]), Number(timePortion[0]) + (antePostMeridiem == "PM" ? 12 : 0), Number(timePortion[1]), timePortion[2] !== undefined ? Number(timePortion[2]) : null);
+		return new Date(Number(datePortion[2]), Number(datePortion[0]), Number(datePortion[1]), Number(timePortion[0]) + (antePostMeridiem == 'PM' ? 12 : 0), Number(timePortion[1]), timePortion[2] !== undefined ? Number(timePortion[2]) : null);
 	}
-}
+};

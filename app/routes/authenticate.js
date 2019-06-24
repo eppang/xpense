@@ -1,10 +1,10 @@
-const express = require("express");
+const express = require('express');
 
 const router = express.Router();
 
-router.get("/logout", (request, response) => {
+router.get('/logout', (request, response) => {
 	request.logout();
-	response.redirect("/");
+	response.redirect('/');
 });
 
 module.exports = router;
