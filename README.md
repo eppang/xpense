@@ -13,6 +13,11 @@ So far, we have created quick and simple mockups of our app pages.
 * Static frontend HTML mockup of account overview (Emily)
 * Static frontend HTML mockup of transaction input (Ethan)
 * Static frontend HTML mockup of overview (Ethan)
+* Set up basic backend in Node.js (Ethan)
+* Integrated user authentication in backend using Okta (Ethan)
+* Made withdrawal and deposit modals functional using JQuery (Emily/Ethan)
+* Fixed most ESLint warnings (Emily)
+* Double-checked server functionality (Ethan/Emily)
 
 ## Pending
-* Backend to be made in Node.js (Emily, Ethan)
+* Create a functioning database using MongoDB (Ethan/Emily)
