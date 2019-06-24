@@ -13,9 +13,7 @@ Directory.INCLUDE = Directory.SELF + "include/";
 Directory.STATIC = Directory.SELF + "static/";
 Directory.TEMPLATE = Directory.SELF + "template/";
 
-const createError = require("http-errors");
 const application = require("express")();
-const path = require("path");
 const session = require("express-session");
 const http = require("http");
 const https = require("https");
