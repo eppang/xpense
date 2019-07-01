@@ -11,6 +11,7 @@ Directory.SELF = `${__dirname}/`;
 Directory.INCLUDE = `${Directory.SELF}include/`;
 Directory.STATIC = `${Directory.SELF}static/`;
 Directory.TEMPLATE = `${Directory.SELF}template/`;
+Directory.DATABASE = `${Directory.SELF}db/`;
 
 const application = require('express')();
 const session = require('express-session');
@@ -18,6 +19,7 @@ const http = require('http');
 const https = require('https');
 const server = http.createServer(application);
 const fs = require('fs');
+const childProcess = require('child_process');
 const handlebars = require('handlebars');
 const okta = require('@okta/okta-sdk-nodejs');
 const ExpressOIDC = require('@okta/oidc-middleware').ExpressOIDC;
@@ -44,6 +46,7 @@ const oidc = new ExpressOIDC({
 		}
 	}
 });
+let mongoProcess = null;
 
 application.use(session({
 	secret: 'PJSM>?L:3I8JKbgVg<\'6Weyvx3Sj6sO>")Nb;7&Eu.Ol<j(4cqAmzmM0p5^Pk&#iMFUq^ElvK%f?R#~44CUlkr!.P\'2:K>hNrB/lx^~ILU~.6?@.?+bXD$)BA:lDr1@_',
@@ -143,7 +146,7 @@ application.use((request, response, next) => {
 					httpError._originalPath = request.path;
 					httpError._impliedPath = path;
 					httpError._internalPath = internalPath;
-
+					
 					// Trigger the error handler chain
 					next(httpError);
 					
@@ -232,11 +235,11 @@ application.use(async (mainError, request, response, next) => {
 			// Couldn't read the error template
 			console.error('Error reading template:');
 			console.error(error);
-
+			
 			// Send a plain text error
 			response.setHeader('Content-Type', 'text/plain');
 			response.send(`${errorType.code} ${errorType.name}\nError Reference ID: ${errorID}`);
-
+			
 			return;
 		}
 		
@@ -279,13 +282,45 @@ application.use(async (mainError, request, response, next) => {
 	});
 });
 
-function start() {
+async function start() {
+	console.log('Starting MongoDB server on port 27017...');
+	// Create db directory for MongoDB
+	fs.mkdirSync(Directory.DATABASE);
+	// Start MongoDB
+	mongoProcess = childProcess.spawn('mongod', ['--dbpath=db', '--port', '27017', '--bind_ip', '127.0.0.1'], {detached: true});
+	await new Promise((resolve, reject) => {
+		let output = '';
+		mongoProcess.stdout.on('data', (data) => {
+			output = output + data.toString();
+			
+			if (output.indexOf('waiting for connections')) {
+				resolve();
+			}
+		});
+		mongoProcess.stderr.on('data', (data) => {
+			console.log(data.toString());
+		});
+	});
+	console.log('Started MongoDB');
+	
 	server.listen(listenPort, listenAddress, () => {
 		console.log(`Listening on ${listenAddress}:${listenPort}`);
 	});
 }
 
-function exit() {
+async function exit() {
+	server.close();
+	console.log('Closed HTTP server');
+	
+	console.log('Waiting for MongoDB to exit...');
+	await new Promise((resolve) => {
+		mongoProcess.on('exit', () => {
+			resolve();
+		});
+		
+		mongoProcess.kill('SIGINT');
+	});
+	
 	console.log('-------------------------SERVER SHUTDOWN-------------------------');
 	process.exit();
 }
